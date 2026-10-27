@@ -1,0 +1,337 @@
+:root {
+  --purple: #35104f;
+  --deep: #210b35;
+  --gold: #f5c75e;
+  --orange: #e87832;
+  --cream: #fff9ed;
+  --white: #fff;
+  --muted: #75677e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--deep);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.navbar {
+  background: var(--deep);
+  color: var(--white);
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+nav { display: flex; gap: 22px; }
+nav a:hover { color: var(--gold); }
+
+.hero {
+  min-height: 340px;
+  padding: 55px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: var(--white);
+  background: linear-gradient(120deg, var(--deep), #64265f, #a64e38);
+}
+
+.hero-text { max-width: 600px; }
+.tag {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero .tag { color: var(--gold); }
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.hero h1 span { color: var(--gold); }
+.hero p { margin: 12px 0 20px; }
+.offer { color: var(--gold); }
+
+.hero-art {
+  min-width: 210px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.glow {
+  font-size: 125px;
+  filter: drop-shadow(0 0 25px var(--gold));
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  to { filter: drop-shadow(0 0 45px var(--orange)); }
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--deep);
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn:hover { background: var(--orange); color: white; }
+.full { width: 100%; }
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 24px 7%;
+  background: white;
+}
+
+.benefits div {
+  text-align: center;
+  padding: 10px;
+}
+
+.benefits b, .benefits small { display: block; }
+.benefits small { color: var(--muted); }
+
+main {
+  max-width: 1200px;
+  width: 90%;
+  margin: 55px auto;
+}
+
+section { scroll-margin-top: 85px; }
+
+#products, #cart { margin-bottom: 65px; }
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-size: clamp(25px, 4vw, 34px);
+  margin: 8px 0;
+}
+
+.section-heading p { color: var(--muted); }
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+input, select, textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e1d2e7;
+  border-radius: 7px;
+  background: white;
+  color: var(--deep);
+}
+
+.filters input { flex: 2; }
+.filters select { flex: 1; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #f0e5f1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px #35104f0d;
+  transition: transform .2s;
+}
+
+.product-card:hover { transform: translateY(-5px); }
+
+.product-art {
+  background: linear-gradient(135deg, #f9e8c3, #f8d5c8);
+  text-align: center;
+  padding: 22px;
+  font-size: 65px;
+}
+
+.product-info { padding: 18px; }
+.product-info h3 { margin-bottom: 5px; }
+.product-info p { color: var(--muted); font-size: 14px; }
+
+.price {
+  color: var(--purple);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.product-info .btn { width: 100%; }
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.cart-box, .summary, .checkout-box {
+  padding: 22px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px #35104f0d;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item h4 { font-size: 15px; }
+.cart-item small { color: var(--muted); }
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.quantity button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 5px;
+  background: #f0e3f5;
+  color: var(--purple);
+}
+
+.remove {
+  border: 0;
+  background: none;
+  color: #c0392b;
+  margin-top: 5px;
+}
+
+.summary h3 { margin-bottom: 15px; }
+.summary p, .summary h3 span {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.summary hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 15px 0;
+}
+
+.coupon {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 8px;
+}
+
+.coupon button, .outline-btn {
+  padding: 10px 14px;
+  border: 1px solid var(--purple);
+  border-radius: 6px;
+  color: var(--purple);
+  background: white;
+}
+
+#couponMessage {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.outline-btn { margin-top: 18px; }
+.hidden { display: none !important; }
+
+#checkout { margin: 50px auto; }
+.checkout-box {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  gap: 15px;
+}
+
+.checkout-box h3 { color: var(--purple); }
+
+.success {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.success div { font-size: 65px; }
+.success h2 { color: var(--purple); margin: 12px; }
+.success p { margin: 15px 0 25px; }
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  background: var(--deep);
+  color: white;
+}
+
+footer h2 { color: var(--gold); }
+footer small { color: #d9c8e2; }
+
+@media (max-width: 800px) {
+  .hero-art { min-width: 130px; }
+  .glow { font-size: 90px; }
+  .benefits { grid-template-columns: repeat(2, 1fr); }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .cart-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .navbar { flex-direction: column; }
+  nav { gap: 14px; }
+  .hero { padding: 35px 6%; }
+  .hero-art { display: none; }
+  .filters { flex-direction: column; }
+  .product-grid { grid-template-columns: 1fr; }
+  .cart-item { flex-wrap: wrap; }
+  main { width: 92%; }
+}
